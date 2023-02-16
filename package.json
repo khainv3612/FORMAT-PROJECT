@@ -1,0 +1,70 @@
+{
+	"name": "format-project",
+	"author": "khainv",
+	"license": "ISC",
+	"version": "1.0.0",
+	"description": "lint-staged prettier eslint husky",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/index.ts",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+		"lint:prettier": "prettier --write  'src/**/*.{js,ts,jsx,tsx,css,less,scss,vue,html,md}'",
+		"lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+		"lint:lint-staged": "lint-staged",
+		"prepare": "husky install"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/khainv3612/FORMAT-PROJECT.git"
+	},
+	"keywords": [
+		"lint-staged",
+		"prettier",
+		"eslint",
+		"husky"
+	],
+	"bugs": {
+		"url": "https://github.com/khainv3612/FORMAT-PROJECT/issues"
+	},
+	"homepage": "https://github.com/khainv3612/FORMAT-PROJECT#readme",
+	"devDependencies": {
+		"eslint": "^8.34.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-vue": "^9.9.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.2",
+		"nodemon": "^2.0.20",
+		"postcss-html": "^1.5.0",
+		"prettier": "^2.8.4",
+		"stylelint": "^15.1.0",
+		"stylelint-config-prettier": "^9.0.5",
+		"stylelint-config-standard": "^30.0.1"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,vue,html}": [
+			"eslint . --ext .vue,.js,.jsx,.ts,.tsx,.html --fix --ignore-path .gitignore",
+			"prettier --write  'src/**/*.{js,ts,jsx,tsx,css,less,scss,vue,html,md}'",
+			"stylelint --cache --fix \"**/*.{vue}\" --cache --cache-location node_modules/.cache/stylelint/"
+		],
+		"*.{scss,less}": [
+			"prettier --write  'src/**/*.{js,ts,jsx,tsx,css,less,scss,vue,html,md}'",
+			"stylelint --cache --fix \"**/*.{less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+		],
+		"{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+			"prettier --write"
+		],
+		"package.json": [
+			"prettier --write"
+		],
+		"*.md": [
+			"prettier --write"
+		]
+	},
+	"browserslist": [
+		"> 1%",
+		"not ie 11",
+		"not op_mini all"
+	]
+}
