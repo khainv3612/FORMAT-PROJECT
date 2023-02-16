@@ -1,0 +1,9 @@
+{
+	"watch": ["src/*", ".env"],
+	"ext": "js,ts,json,html,vue,tsx,jsx",
+	"ignore": [
+		"src/logs/*",
+		"src/**/*.{spec,test}.ts",
+		"src/**/*.{spec,test}.js"
+	]
+}
