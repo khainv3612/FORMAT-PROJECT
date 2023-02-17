@@ -29,16 +29,16 @@
 	},
 	"homepage": "https://github.com/khainv3612/FORMAT-PROJECT#readme",
 	"devDependencies": {
+		"nodemon": "^2.0.20",
 		"eslint": "^8.34.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-config-standard": "^17.0.0",
 		"eslint-plugin-vue": "^9.9.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.1.2",
-		"nodemon": "^2.0.20",
 		"postcss-html": "^1.5.0",
 		"prettier": "^2.8.4",
-		"stylelint": "^15.1.0",
+		"stylelint": "^14.16.1",
 		"stylelint-config-prettier": "^9.0.5",
 		"stylelint-config-standard": "^30.0.1"
 	},
